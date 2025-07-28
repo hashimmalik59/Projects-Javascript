@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100h;
+        flex-direction: column;
+      }
+      .bulb {
+        height: 300px;
+        width: 300px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Selecting <span style="visibility: hidden">HTML</span>Element</h1>
+    <p class="para">Paragraph</p>
+    <button id="btn">Button</button>
+    <br />
+    <hr />
+    <br />
+    <h6>Hashim</h6>
+    <h6>Ahmad</h6>
+    <h6>Malik</h6>
+    <br />
+    <hr />
+    <br />
+    <div class="bulb"></div>
+    <button class="onoff">ON</button>
+  </body>
+  <script src="dom.js"></script>
+  <!-- Project -->
+  <script>
+    const bulbButton = document.querySelector(".onoff");
+    const bulb = document.querySelector(".bulb");
+    let light;
+
+    bulbButton.addEventListener("click", function () {
+      if (!light) {
+        light = true;
+        bulbButton.textContent = "OFF";
+        bulb.style.backgroundColor = "#fff";
+        bulb.style.boxShadow = "0 0 100px";
+      } else {
+        light = false;
+        bulb.style.backgroundColor = "transparent";
+        bulbButton.textContent = "ON";
+        bulb.style.boxShadow = "none";
+      }
+    });
+  </script>
+</html>
